@@ -271,6 +271,12 @@
         transform: translateY(-6px);
         box-shadow: 0 30px 60px -30px rgba(31, 27, 22, 0.25);
       }
+      .package-card__description {
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
 
       .ulink {
         position: relative;
@@ -1276,268 +1282,30 @@
           </p>
         </div>
 
-        <!-- Premium Painting -->
         <h3
+          id="package-list-title"
           class="font-display text-sm uppercase tracking-[.22em] text-stone mb-6"
         >
-          Premium Painting Packages
-        </h3>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <div
-            class="price-card bg-bone rounded-3xl p-7 border border-softgrey reveal"
-          >
-            <div class="flex items-center justify-between">
-              <span class="text-xs uppercase tracking-[.18em] text-stone"
-                >3-Room HDB</span
-              >
-              <span class="num text-clay">01</span>
-            </div>
-            <div class="mt-6 flex items-baseline gap-1">
-              <span class="text-stone text-sm">$</span>
-              <span class="num text-5xl tracking-tight">1,188</span>
-            </div>
-            <p class="mt-2 text-sm text-stone">All-in. Nett.</p>
-            <ul class="mt-6 space-y-2.5 text-sm text-ink/80">
-              <li class="flex gap-2">
-                <span class="text-clay">·</span> Up to 60 sqm coverage
-              </li>
-              <li class="flex gap-2">
-                <span class="text-clay">·</span> 2 coats Raffles Anti-Mould
-              </li>
-              <li class="flex gap-2">
-                <span class="text-clay">·</span> Minor crack & wall prep
-              </li>
-              <li class="flex gap-2">
-                <span class="text-clay">·</span> 5-year warranty
-              </li>
-            </ul>
-            <a
-              href="https://wa.me/6587713358?text=Hi%20Meow%2C%20I%27d%20like%20a%20quote%20for%20a%203-Room%20HDB%20repaint."
-              class="mt-7 inline-flex items-center gap-2 text-sm font-medium ulink"
-              >Book this package →</a
-            >
-          </div>
-
-          <div
-            class="price-card bg-bone rounded-3xl p-7 border border-softgrey reveal delay-1"
-          >
-            <div class="flex items-center justify-between">
-              <span class="text-xs uppercase tracking-[.18em] text-stone"
-                >4-Room HDB</span
-              >
-              <span class="num text-clay">02</span>
-            </div>
-            <div class="mt-6 flex items-baseline gap-1">
-              <span class="text-stone text-sm">$</span>
-              <span class="num text-5xl tracking-tight">1,288</span>
-            </div>
-            <p class="mt-2 text-sm text-stone">All-in. Nett.</p>
-            <ul class="mt-6 space-y-2.5 text-sm text-ink/80">
-              <li class="flex gap-2">
-                <span class="text-clay">·</span> Up to 90 sqm coverage
-              </li>
-              <li class="flex gap-2">
-                <span class="text-clay">·</span> 2 coats Raffles Anti-Mould
-              </li>
-              <li class="flex gap-2">
-                <span class="text-clay">·</span> Minor crack & wall prep
-              </li>
-              <li class="flex gap-2">
-                <span class="text-clay">·</span> 5-year warranty
-              </li>
-            </ul>
-            <a
-              href="https://wa.me/6587713358?text=Hi%20Meow%2C%20I%27d%20like%20a%20quote%20for%20a%204-Room%20HDB%20repaint."
-              class="mt-7 inline-flex items-center gap-2 text-sm font-medium ulink"
-              >Book this package →</a
-            >
-          </div>
-
-          <!-- Featured -->
-          <div
-            class="price-card bg-ink text-bone rounded-3xl p-7 border border-ink relative reveal delay-2"
-          >
-            <div
-              class="absolute -top-3 left-7 px-3 py-1 rounded-full bg-accent text-ink text-[10px] font-semibold tracking-[.2em] uppercase"
-            >
-              Most Popular
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="text-xs uppercase tracking-[.18em] text-bone/60"
-                >5-Room HDB</span
-              >
-              <span class="num text-accent">03</span>
-            </div>
-            <div class="mt-6 flex items-baseline gap-1">
-              <span class="text-bone/60 text-sm">$</span>
-              <span class="num text-5xl tracking-tight">1,388</span>
-            </div>
-            <p class="mt-2 text-sm text-bone/60">All-in. Nett.</p>
-            <ul class="mt-6 space-y-2.5 text-sm text-bone/85">
-              <li class="flex gap-2">
-                <span class="text-accent">·</span> Up to 110 sqm coverage
-              </li>
-              <li class="flex gap-2">
-                <span class="text-accent">·</span> 2 coats Raffles Anti-Mould
-              </li>
-              <li class="flex gap-2">
-                <span class="text-accent">·</span> Free 1 feature wall colour
-              </li>
-              <li class="flex gap-2">
-                <span class="text-accent">·</span> 5-year warranty
-              </li>
-            </ul>
-            <a
-              href="https://wa.me/6587713358?text=Hi%20Meow%2C%20I%27d%20like%20a%20quote%20for%20a%205-Room%20HDB%20repaint."
-              class="mt-7 inline-flex items-center gap-2 text-sm font-medium text-accent"
-              >Book this package →</a
-            >
-          </div>
-
-          <div
-            class="price-card bg-bone rounded-3xl p-7 border border-softgrey reveal delay-3"
-          >
-            <div class="flex items-center justify-between">
-              <span class="text-xs uppercase tracking-[.18em] text-stone"
-                >EA / EM</span
-              >
-              <span class="num text-clay">04</span>
-            </div>
-            <div class="mt-6 flex items-baseline gap-1">
-              <span class="text-stone text-sm">$</span>
-              <span class="num text-5xl tracking-tight">1,588</span>
-            </div>
-            <p class="mt-2 text-sm text-stone">All-in. Nett.</p>
-            <ul class="mt-6 space-y-2.5 text-sm text-ink/80">
-              <li class="flex gap-2">
-                <span class="text-clay">·</span> Executive / Maisonette
-              </li>
-              <li class="flex gap-2">
-                <span class="text-clay">·</span> 2 coats Raffles Anti-Mould
-              </li>
-              <li class="flex gap-2">
-                <span class="text-clay">·</span> Stairwell & high ceiling
-              </li>
-              <li class="flex gap-2">
-                <span class="text-clay">·</span> 5-year warranty
-              </li>
-            </ul>
-            <a
-              href="https://wa.me/6587713358?text=Hi%20Meow%2C%20I%27d%20like%20a%20quote%20for%20an%20EA%2FEM%20repaint."
-              class="mt-7 inline-flex items-center gap-2 text-sm font-medium ulink"
-              >Book this package →</a
-            >
-          </div>
-        </div>
-
-        <!-- Limewash -->
-        <h3
-          class="font-display text-sm uppercase tracking-[.22em] text-stone mt-20 mb-6"
-        >
-          Luxury Limewash Packages
+          Packages
         </h3>
         <div
-          class="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-sm text-clay font-medium"
+          id="packages-loading"
+          class="text-sm text-stone mb-6"
         >
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <circle cx="12" cy="12" r="10" />
-            <path d="M12 8v4l3 3" stroke-linecap="round" />
-          </svg>
-          Package includes: Ceiling · Sealer · Primer · Varnish
+          Loading packages...
         </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <div
-            class="price-card bg-sand/70 rounded-3xl p-7 border border-softgrey reveal"
-          >
-            <span class="text-xs uppercase tracking-[.18em] text-stone"
-              >3-Room HDB</span
-            >
-            <h4 class="font-display text-3xl mt-3">Limewash</h4>
-            <div class="mt-4 flex items-baseline gap-1">
-              <span class="text-stone text-sm">$</span>
-              <span class="num text-4xl">3,888</span>
-            </div>
-            <p class="text-sm text-stone mt-3">
-              Ambience. Soothe. Calm. Curves Only Design.
-            </p>
-            <a
-              href="https://wa.me/6587713358?text=Hi%20Meow%2C%20I%27m%20interested%20in%20the%203-Room%20Limewash%20package."
-              class="mt-6 inline-flex items-center gap-2 text-sm font-medium ulink"
-              >Enquire now →</a
-            >
-          </div>
-          <div
-            class="price-card bg-sand/70 rounded-3xl p-7 border border-softgrey reveal delay-1"
-          >
-            <span class="text-xs uppercase tracking-[.18em] text-stone"
-              >4-Room HDB</span
-            >
-            <h4 class="font-display text-3xl mt-3">Limewash</h4>
-            <div class="mt-4 flex items-baseline gap-1">
-              <span class="text-stone text-sm">$</span>
-              <span class="num text-4xl">4,888</span>
-            </div>
-            <p class="text-sm text-stone mt-3">
-              Ambience. Soothe. Calm. Curves Only Design.
-            </p>
-            <a
-              href="https://wa.me/6587713358?text=Hi%20Meow%2C%20I%27m%20interested%20in%20the%204-Room%20Limewash%20package."
-              class="mt-6 inline-flex items-center gap-2 text-sm font-medium ulink"
-              >Enquire now →</a
-            >
-          </div>
-          <div
-            class="price-card bg-sand/70 rounded-3xl p-7 border border-softgrey reveal delay-2"
-          >
-            <span class="text-xs uppercase tracking-[.18em] text-stone"
-              >5-Room HDB</span
-            >
-            <h4 class="font-display text-3xl mt-3">Limewash</h4>
-            <div class="mt-4 flex items-baseline gap-1">
-              <span class="text-stone text-sm">$</span>
-              <span class="num text-4xl">5,888</span>
-            </div>
-            <p class="text-sm text-stone mt-3">
-              Ambience. Soothe. Calm. Curves Only Design.
-            </p>
-            <a
-              href="https://wa.me/6587713358?text=Hi%20Meow%2C%20I%27m%20interested%20in%20the%205-Room%20Limewash%20package."
-              class="mt-6 inline-flex items-center gap-2 text-sm font-medium ulink"
-              >Enquire now →</a
-            >
-          </div>
-          <div
-            class="price-card bg-ink text-bone rounded-3xl p-7 border border-ink relative reveal delay-3"
-          >
-            <div
-              class="absolute -top-3 left-7 px-3 py-1 rounded-full bg-accent text-ink text-[10px] font-semibold tracking-[.2em] uppercase"
-            >
-              Luxury
-            </div>
-            <span class="text-xs uppercase tracking-[.18em] text-bone/60"
-              >EA / EM</span
-            >
-            <h4 class="font-display text-3xl mt-3 text-bone">Limewash</h4>
-            <div class="mt-4 flex items-baseline gap-1">
-              <span class="text-bone/60 text-sm">$</span>
-              <span class="num text-4xl">7,888</span>
-            </div>
-            <p class="text-sm text-bone/60 mt-3">
-              Transform your space into a luxurious masterpiece.
-            </p>
-            <a
-              href="https://wa.me/6587713358?text=Hi%20Meow%2C%20I%27m%20interested%20in%20the%20EA%2FEM%20Limewash%20package."
-              class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent"
-              >Enquire now →</a
-            >
-          </div>
+        <div
+          id="package-list"
+          class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+        ></div>
+        <div
+          id="packages-pagination"
+          class="hidden mt-10 flex flex-wrap items-center justify-center gap-2"
+        ></div>
+        <div id="packages-empty" class="hidden text-center py-12">
+          <p class="font-display text-2xl text-stone">
+            Packages unavailable. Please check back soon.
+          </p>
         </div>
 
         <p class="text-center text-xs text-stone mt-10 max-w-2xl mx-auto">
@@ -1771,21 +1539,24 @@
           </div>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          id="reviews-grid"
+          class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           <figure
-            class="bg-bone border border-softgrey rounded-3xl overflow-hidden reveal"
+            class="bg-bone border border-softgrey rounded-3xl overflow-hidden reveal flex flex-col"
           >
             <img
               src="images/testimonial1.jpg"
               alt="Daniel & Hui Min review"
               class="testi-photo"
             />
-            <div class="p-7">
+            <div class="p-7 flex flex-col grow">
               <div class="text-accent text-lg">★★★★★</div>
               <blockquote class="font-display text-lg mt-4 leading-snug">
                 "First time renovation and we're so glad we chose Meow!"
               </blockquote>
-              <p class="mt-3 text-sm text-stone leading-relaxed">
+              <p class="mt-3 text-sm text-stone leading-relaxed grow">
                 Work was clean, no mess left behind, and the finishing is very
                 smooth. Would recommend if you want something fuss-free.
               </p>
@@ -1809,19 +1580,19 @@
           </figure>
 
           <figure
-            class="bg-bone border border-softgrey rounded-3xl overflow-hidden reveal delay-1"
+            class="bg-bone border border-softgrey rounded-3xl overflow-hidden reveal delay-1 flex flex-col"
           >
             <img
               src="images/testimonial2.jpg"
               alt="Cheryl T review"
               class="testi-photo"
             />
-            <div class="p-7">
+            <div class="p-7 flex flex-col grow">
               <div class="text-accent text-lg">★★★★★</div>
               <blockquote class="font-display text-lg mt-4 leading-snug">
                 "Limewash finish looks so soft and gives that hotel feel!"
               </blockquote>
-              <p class="mt-3 text-sm text-stone leading-relaxed">
+              <p class="mt-3 text-sm text-stone leading-relaxed grow">
                 Their team also helped suggest which wall to feature instead of
                 doing whole house, which saved us money. No hard selling, quite
                 genuine.
@@ -1844,19 +1615,19 @@
           </figure>
 
           <figure
-            class="bg-bone border border-softgrey rounded-3xl overflow-hidden reveal delay-2"
+            class="bg-bone border border-softgrey rounded-3xl overflow-hidden reveal delay-2  flex flex-col"
           >
             <img
               src="images/testimonial3.jpg"
               alt="Marcus L review"
               class="testi-photo"
             />
-            <div class="p-7">
+            <div class="p-7 flex flex-col grow">
               <div class="text-accent text-lg">★★★★★</div>
               <blockquote class="font-display text-lg mt-4 leading-snug">
                 "Needed urgent repaint and they were super fast and efficient!"
               </blockquote>
-              <p class="mt-3 text-sm text-stone leading-relaxed">
+              <p class="mt-3 text-sm text-stone leading-relaxed grow">
                 Team came on time, finished within schedule, and updates were
                 given daily. Most important – no hidden costs after everything.
               </p>
@@ -1880,19 +1651,19 @@
           </figure>
 
           <figure
-            class="bg-bone border border-softgrey rounded-3xl overflow-hidden reveal"
+            class="bg-bone border border-softgrey rounded-3xl overflow-hidden reveal flex flex-col"
           >
             <img
               src="images/testimonial4.jpg"
               alt="Jasmine K review"
               class="testi-photo"
             />
-            <div class="p-7">
+            <div class="p-7 flex flex-col grow">
               <div class="text-accent text-lg">★★★★★</div>
               <blockquote class="font-display text-lg mt-4 leading-snug">
                 "Attention to detail that really shows!"
               </blockquote>
-              <p class="mt-3 text-sm text-stone leading-relaxed">
+              <p class="mt-3 text-sm text-stone leading-relaxed grow">
                 Corners, edges, even behind fixtures were properly done. They
                 also came back to touch up small areas without us asking much.
                 Shows responsibility.
@@ -1917,19 +1688,19 @@
           </figure>
 
           <figure
-            class="bg-bone border border-softgrey rounded-3xl overflow-hidden reveal delay-1 md:col-span-2 lg:col-span-1"
+            class="bg-bone border border-softgrey rounded-3xl overflow-hidden reveal delay-1 md:col-span-2 lg:col-span-1  flex flex-col"
           >
             <img
               src="images/testimonial5.jpg"
               alt="Ryan & Mei review"
               class="testi-photo"
             />
-            <div class="p-7">
+            <div class="p-7 flex flex-col grow">
               <div class="text-accent text-lg">★★★★★</div>
               <blockquote class="font-display text-lg mt-4 leading-snug">
                 "Great quality and worth every cent!"
               </blockquote>
-              <p class="mt-3 text-sm text-stone leading-relaxed">
+              <p class="mt-3 text-sm text-stone leading-relaxed grow">
                 Price was reasonable and with Grab PayLater promo it made things
                 easier. House feels brighter and cleaner now.
               </p>
@@ -2395,6 +2166,8 @@
         >
       </span>
     </a>
+    <script src="js/packages.js"></script>
+    <script src="js/reviews.js"></script>
     <script src="js/blogs.js"></script>
     <script>
       document.getElementById("yr").textContent = new Date().getFullYear();
@@ -2438,6 +2211,8 @@
       });
 
       if (window.initBlogSection) window.initBlogSection();
+      if (window.initPricingSection) window.initPricingSection();
+      if (window.initReviewsSection) window.initReviewsSection();
     </script>
   </body>
 </html>
