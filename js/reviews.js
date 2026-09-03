@@ -177,9 +177,8 @@
     if (reviews.length === 0) return;
 
     grid.insertAdjacentHTML(
-      "beforeend",
-      [...reviews]
-        .sort((a, b) => a.order - b.order)
+      "afterbegin",
+      [...reviews] 
         .map(renderReviewCard)
         .join(""),
     );
