@@ -291,7 +291,9 @@
         font-size: 15px;
         outline: none;
         box-sizing: border-box;
-        transition: border-color 0.2s, box-shadow 0.2s;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
       }
       .mr-input:focus,
       .mr-field-group select:focus,
@@ -385,7 +387,9 @@
         vertical-align: middle;
       }
       @keyframes mrSpin {
-        to { transform: rotate(360deg); }
+        to {
+          transform: rotate(360deg);
+        }
       }
       @media (max-width: 640px) {
         .mr-form-grid {
@@ -670,12 +674,17 @@
       }
     </style>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4QT0BKB1T8"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-4QT0BKB1T8"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-4QT0BKB1T8');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-4QT0BKB1T8");
     </script>
   </head>
   <body class="grain">
@@ -2024,9 +2033,13 @@
             >
           </h2>
           <p class="text-stone mt-6 max-w-xl mx-auto text-lg">
-            Request your free consultation and quote below. Free site visit and a written 5-year warranty on every project – no exceptions.
+            Request your free consultation and quote below. Free site visit and
+            a written 5-year warranty on every project – no exceptions.
           </p>
-          <div id="meowRenovationsContactContainer" class="mt-10 text-left"></div>
+          <div
+            id="meowRenovationsContactContainer"
+            class="mt-10 text-left"
+          ></div>
           <div class="mt-9 flex flex-wrap gap-3 justify-center">
             <a
               href="https://wa.me/6587713358?text=Hi%20Meow%2C%20I%27d%20like%20a%20free%20quote."
