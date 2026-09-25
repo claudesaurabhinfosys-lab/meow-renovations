@@ -292,6 +292,9 @@
     if (!item || typeof item !== "object") return null;
     const type = getString(item.type).toLowerCase();
     const id = getString(item.id);
+    const displayOn = getString(item.display_on).toLowerCase();
+    if (displayOn === "app") return null;
+
     const title = getString(item.title);
     const subtitle = getString(item.subtitle);
     const message = getString(item.message);
@@ -300,9 +303,7 @@
       resolveImageUrl(item.image_url) || resolveImageUrl(item.image);
     const webBannerImageUrl =
       resolveImageUrl(item.web_banner_image_url) ||
-      resolveImageUrl(item.web_banner_image) ||
-      resolveImageUrl(item.banner_image_url) ||
-      resolveImageUrl(item.banner_image);
+      resolveImageUrl(item.web_banner_image);
     const webMobileBannerImageUrl =
       resolveImageUrl(item.web_mobile_banner_image_url) ||
       resolveImageUrl(item.web_mobile_banner_image);
