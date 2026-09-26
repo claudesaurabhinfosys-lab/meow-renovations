@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms &amp; Conditions – Meow Renovations</title>
+    <meta
+      name="description"
+      content="Read the official Terms & Conditions for Meow Renovations in Singapore."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Manrope:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: "#F6F1E8",
+              sand: "#EDE3D2",
+              bone: "#FBF8F2",
+              taupe: "#A89684",
+              clay: "#8B7355",
+              ink: "#1F1B16",
+              stone: "#6B6359",
+              softgrey: "#E8E4DC",
+              accent: "#C9A66B",
+            },
+            fontFamily: {
+              display: ["Fraunces", "serif"],
+              sans: ["Manrope", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Manrope", sans-serif;
+        background: #fbf8f2;
+        color: #1f1b16;
+        -webkit-font-smoothing: antialiased;
+      }
+      .font-display {
+        font-family: "Fraunces", serif;
+      }
+      .legal-content {
+        color: #3b352e;
+        line-height: 1.8;
+      }
+      .legal-content > * + * {
+        margin-top: 1rem;
+      }
+      .legal-content h1,
+      .legal-content h2,
+      .legal-content h3 {
+        font-family: "Fraunces", serif;
+        color: #1f1b16;
+        font-weight: 600;
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      .legal-content strong {
+        color: #1f1b16;
+      }
+      .legal-content a {
+        color: #c9a66b;
+        text-decoration: underline;
+      }
+      .legal-content hr {
+        border: none;
+        border-top: 1px solid #ede3d2;
+        margin: 1.5rem 0;
+      }
+      .legal-content ul,
+      .legal-content ol {
+        padding-left: 1.6rem;
+        margin: 0.6rem 0;
+      }
+      .legal-content li {
+        margin-top: 0.35rem;
+      }
+      .legal-content li > p {
+        display: inline;
+        margin: 0;
+      }
+      .spinner {
+        width: 36px;
+        height: 36px;
+        border: 3px solid #ede3d2;
+        border-top-color: #c9a66b;
+        border-radius: 50%;
+        animation: spin 0.85s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col justify-between">
+    <!-- NAV -->
+    <header
+      id="top-nav"
+      class="fixed top-0 left-0 right-0 z-50 bg-bone/90 backdrop-blur-md border-b border-sand"
+    >
+      <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="../index.html" class="flex items-center gap-3">
+          <img
+            src="../images/logo.jpeg"
+            alt="Meow Renovations Logo"
+            class="h-10 w-auto rounded-full object-cover"
+          />
+          <span class="font-display font-medium text-lg tracking-tight text-ink"
+            >Meow Renovations</span
+          >
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm">
+          <a href="../index.html#services" class="hover:text-accent transition">Services</a>
+          <a href="../index.html#packages" class="hover:text-accent transition">Packages</a>
+          <a href="../blog.html" class="hover:text-accent transition">Blog</a>
+          <a
+            href="../index.html#contact"
+            class="px-5 py-2.5 rounded-full bg-ink text-bone text-xs uppercase tracking-wider font-semibold hover:bg-clay transition"
+            >Get a Quote</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN BODY -->
+    <main class="pt-32 pb-20 px-6 max-w-4xl mx-auto w-full flex-1">
+      <div class="mb-8">
+        <a
+          href="../index.html"
+          class="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-stone hover:text-accent transition mb-4 font-semibold"
+        >
+          ← Back to Home
+        </a>
+        <div class="text-xs uppercase tracking-[.25em] text-accent font-semibold mb-2">
+          Legal &amp; Terms
+        </div>
+        <h1 id="legalTitle" class="font-display text-3xl md:text-5xl font-normal text-ink">
+          Terms &amp; Conditions
+        </h1>
+        <p id="legalMeta" class="text-sm text-stone mt-2" style="display: none;"></p>
+      </div>
+
+      <div class="bg-bone border border-sand rounded-3xl p-6 md:p-12 shadow-sm">
+        <div id="legalLoading" class="flex flex-col items-center justify-center py-20 gap-3 text-stone text-sm">
+          <div class="spinner"></div>
+          <span>Loading terms &amp; conditions...</span>
+        </div>
+
+        <div id="legalError" class="text-center py-16 text-stone text-sm" style="display: none;">
+          <p class="mb-4">Unable to load terms &amp; conditions right now.</p>
+          <button
+            type="button"
+            id="retryBtn"
+            class="px-6 py-2.5 rounded-full bg-accent text-bone text-xs uppercase tracking-wider font-semibold hover:bg-clay transition"
+          >
+            Retry
+          </button>
+        </div>
+
+        <div id="legalEmpty" class="text-center py-16 text-stone text-sm" style="display: none;">
+          Terms &amp; Conditions content not configured.
+        </div>
+
+        <div id="legalContent" class="legal-content text-sm md:text-base" style="display: none;"></div>
+
+        <div class="mt-12 pt-6 border-t border-sand flex justify-center gap-4 text-xs text-stone">
+          <a href="../privacy-policy.html" class="hover:text-accent transition">Privacy Policy</a>
+          <span>·</span>
+          <a href="./" class="text-accent underline">Terms &amp; Conditions</a>
+          <span>·</span>
+          <a href="../index.html#contact" class="hover:text-accent transition">Contact</a>
+          <span>·</span>
+          <a href="../index.html" class="hover:text-accent transition">Home</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-ink text-bone pt-16 pb-12">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 border-t border-bone/10 pt-6 text-xs text-bone/50">
+          <span>© 2026 Meow Renovations. All rights reserved.</span>
+          <div class="flex gap-4">
+            <a href="../privacy-policy.html" class="hover:text-bone transition">Privacy Policy</a>
+            <span>·</span>
+            <a href="./" class="hover:text-bone transition">Terms &amp; Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const URL = "https://meow-service-test.flutterclone.com/api/admin/pages/slug/terms-and-conditions";
+        const loadingEl = document.getElementById("legalLoading");
+        const errorEl = document.getElementById("legalError");
+        const emptyEl = document.getElementById("legalEmpty");
+        const contentEl = document.getElementById("legalContent");
+        const titleEl = document.getElementById("legalTitle");
+        const metaEl = document.getElementById("legalMeta");
+        const retryBtn = document.getElementById("retryBtn");
+
+        async function fetchTerms() {
+          loadingEl.style.display = "flex";
+          errorEl.style.display = "none";
+          emptyEl.style.display = "none";
+          contentEl.style.display = "none";
+
+          try {
+            const res = await fetch(URL, {
+              headers: { Accept: "application/json", "X-Platform": "web" }
+            });
+            if (!res.ok) throw new Error("HTTP " + res.status);
+            const json = await res.json();
+            const page = json?.data;
+            if (!page || !page.description || !page.description.trim()) {
+              loadingEl.style.display = "none";
+              emptyEl.style.display = "block";
+              return;
+            }
+            if (page.title) {
+              titleEl.textContent = page.title;
+              document.title = page.title + " – Meow Renovations";
+            }
+            if (page.updated_at) {
+              const d = new Date(page.updated_at);
+              if (!isNaN(d.getTime())) {
+                metaEl.textContent = "Last updated: " + d.toLocaleDateString("en-US", {
+                  year: "numeric", month: "long", day: "numeric"
+                });
+                metaEl.style.display = "block";
+              }
+            }
+            contentEl.innerHTML = page.description.trim();
+            loadingEl.style.display = "none";
+            contentEl.style.display = "block";
+          } catch (err) {
+            console.error("Failed to load terms:", err);
+            loadingEl.style.display = "none";
+            errorEl.style.display = "block";
+          }
+        }
+
+        if (retryBtn) retryBtn.addEventListener("click", fetchTerms);
+        fetchTerms();
+      })();
+    </script>
+  </body>
+</html>
