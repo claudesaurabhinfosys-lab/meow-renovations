@@ -2,7 +2,6 @@
   const API_BASE =
     "https://meow-service-test.flutterclone.com/api/sites/meowrenovations-1785930255/packages";
   const HELPERS_HEAD = "site_17ae9f96c18a0e8a81d0363c3c91a025709fdb7bace738b2";
-  const WHATSAPP_NUMBER = "6587713358";
   const PER_PAGE = 6;
 
   const state = {
@@ -11,6 +10,7 @@
     total: 0,
     cache: new Map(),
     packagesById: new Map(),
+    whatsappNumber: "",
   };
 
   const API_ORIGIN = new URL(API_BASE).origin;
@@ -280,8 +280,9 @@
   }
 
   function createWhatsappUrl(pkg) {
+    if (!state.whatsappNumber) return "";
     const text = `Hi Meow, I'm interested in ${pkg.title}.`;
-    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/${state.whatsappNumber}?text=${encodeURIComponent(text)}`;
   }
 
   function cleanDescription(value) {
@@ -444,7 +445,7 @@
           </ul>
         </div>`
       : "";
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hi Meow, I'm interested in ${pkg.title}.`)}`;
+    const whatsappUrl = createWhatsappUrl(pkg);
 
     return `
       ${imageHTML}
@@ -459,12 +460,12 @@
       ${highlightsHTML}
       ${featuresHTML}
       ${termsHTML}
-      <a href="${escapeHTML(whatsappUrl)}" target="_blank" rel="noopener noreferrer" class="mt-7 w-full h-10 flex items-center justify-center gap-2 text-xs font-medium rounded-lg border hover:bg-[#20BD5A] hover:text-white transition">
+      ${whatsappUrl ? `<a href="${escapeHTML(whatsappUrl)}" target="_blank" rel="noopener noreferrer" class="mt-7 w-full h-10 flex items-center justify-center gap-2 text-xs font-medium rounded-lg border hover:bg-[#20BD5A] hover:text-white transition">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
           <path d="M19.05 4.91A10 10 0 0 0 4.9 19.06L4 23l4.07-1.06A10 10 0 1 0 19.05 4.91Zm-7.05 16a8 8 0 0 1-4.07-1.12l-.29-.17-2.4.63.64-2.34-.19-.3A8 8 0 1 1 12 20.91Zm4.4-5.96c-.24-.12-1.43-.71-1.65-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.36.1-.48.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/>
         </svg>
         WhatsApp
-      </a>
+      </a>` : ""}
     `;
   }
 
@@ -494,7 +495,7 @@
       ? `<p class="package-card__description mt-4 text-sm text-stone leading-relaxed">${escapeHTML(pkg.description)}</p>`
       : "";
     const ctaUrl = pkg.ctaUrl || createWhatsappUrl(pkg);
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hi Meow, I'm interested in ${pkg.title}.`)}`;
+    const whatsappUrl = createWhatsappUrl(pkg);
 
     return `
       <div class="price-card bg-bone rounded-3xl p-7 border border-softgrey relative reveal in">
@@ -510,7 +511,7 @@
           Show all info
         </button>
         <div class="mt-7 space-y-4">
-        <div >
+        ${whatsappUrl ? `<div>
         <p class="text-[11px] font-semibold uppercase tracking-[.15em] text-stone mb-2.5">Questions? Contact us</p>
         <a href="${escapeHTML(whatsappUrl)}" target="_blank" rel="noopener noreferrer" class="w-full h-10 flex items-center justify-center gap-2 text-xs font-medium rounded-lg border hover:bg-[#20BD5A]  hover:text-white transition">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -518,7 +519,7 @@
         </svg>
         WhatsApp
         </a>
-        </div>
+        </div>` : ""}
          <div class="border-t border-softgrey pt-4">
           <p class="text-[11px] font-semibold uppercase tracking-[.15em] text-stone mb-2.5">Book an appointment on Le Meow app</p>
           <div class="flex gap-2">
@@ -617,7 +618,9 @@
     });
   }
 
-  function initPricingSection() {
+  async function initPricingSection() {
+    const brand = await window.brandContactPromise;
+    state.whatsappNumber = brand?.phone?.replace(/\D/g, "") || "";
     bindPagination();
     bindPackageInfoDelegation();
     loadPage(1);

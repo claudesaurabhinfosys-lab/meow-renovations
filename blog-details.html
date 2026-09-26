@@ -294,7 +294,7 @@
           <a href="blog.html" class="ulink hover:text-ink">Blog</a>
         </nav>
         <a
-          href="https://wa.me/6587713358?text=Hi%20Meow%20Renovations%2C%20I%27d%20like%20a%20free%20quote%20for%20my%20home."
+          href="https://wa.me/?text=Hi%20Meow%20Renovations%2C%20I%27d%20like%20a%20free%20quote%20for%20my%20home." hidden
           class="hidden sm:inline-flex btn-primary !py-3 !px-5 text-sm"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -447,30 +447,11 @@
               </li>
             </ul>
           </div>
-          <div class="md:col-span-4">
+          <div class="md:col-span-4" data-brand-contact-section hidden>
             <div class="text-xs uppercase tracking-[.22em] text-bone/50">
               Contact
             </div>
-            <ul class="mt-4 space-y-2 text-sm">
-              <li>
-                WhatsApp ·
-                <a
-                  href="https://wa.me/6587713358"
-                  class="hover:text-bone transition"
-                  >+65 8771 3358</a
-                >
-              </li>
-              <li>
-                Email ·
-                <a
-                  href="mailto:hello@meowrenovations.sg"
-                  class="hover:text-bone transition"
-                  >hello@meowrenovations.sg</a
-                >
-              </li>
-              <li>Mon–Sat · 9am–7pm</li>
-              <li>Singapore · Island-wide</li>
-            </ul>
+            <ul class="mt-4 space-y-2 text-sm" data-brand-contact-list></ul>
           </div>
         </div>
         <div
@@ -518,7 +499,7 @@
 
     <!-- ================= STICKY WHATSAPP ================= -->
     <a
-      href="https://wa.me/6587713358?text=Hi%20Meow%2C%20I%27d%20like%20a%20free%20quote."
+      href="https://wa.me/?text=Hi%20Meow%2C%20I%27d%20like%20a%20free%20quote." hidden
       aria-label="Chat with Meow on WhatsApp"
       class="fixed bottom-5 right-5 z-50 group"
     >
@@ -536,6 +517,7 @@
         >
       </span>
     </a>
+    <script src="js/brand-contact.js" data-brand-slug="knoc-knoc"></script>
     <script src="js/blogs.js"></script>
     <script>
       document.getElementById("yr").textContent = new Date().getFullYear();
