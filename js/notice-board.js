@@ -276,8 +276,8 @@
     }
   }
 
-  function isDismissible(value) {
-    return value === true || value === 1 || value === "1" || value === "true";
+  function isDismissible() {
+    return true;
   }
 
   function extractNotices(payload) {
@@ -464,7 +464,7 @@
       panel.setAttribute("aria-label", notice.title || "Notice");
     }
     panel.appendChild(rendered.content);
-    if (notice.isDismissible) panel.appendChild(createCloseButton(notice));
+    panel.appendChild(createCloseButton(notice));
     overlay.appendChild(panel);
     document.body.appendChild(overlay);
     overlay.addEventListener("keydown", handleKeydown);
@@ -483,10 +483,8 @@
   function handleKeydown(event) {
     if (!state.current) return;
     if (event.key === "Escape") {
-      if (state.current.isDismissible) {
-        event.preventDefault();
-        dismissCurrent();
-      }
+      event.preventDefault();
+      dismissCurrent();
       return;
     }
     if (event.key !== "Tab") return;
@@ -526,7 +524,7 @@
   }
 
   function dismissCurrent() {
-    if (!state.current || !state.current.isDismissible) return;
+    if (!state.current) return;
     saveDismissed(state.current.id);
     removeDialog();
     showNext();
@@ -550,9 +548,8 @@
       overflowY: document.body.style.overflowY,
     };
     document.body.style.overflow = "hidden";
-    const focusTarget = notice.isDismissible
-      ? state.panel.querySelector(".notice-board-close")
-      : state.panel;
+    const focusTarget =
+      state.panel.querySelector(".notice-board-close") || state.panel;
     focusTarget.focus({ preventScroll: true });
   }
 
